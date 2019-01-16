@@ -6,7 +6,7 @@ import numpy as np
 import scipy.misc
 import os
 import errno
-from preprocess.dataset import TextDataset
+from dataset import TextDataset
 
 
 def get_image(image_path, image_size, is_crop=False, bbox=None):

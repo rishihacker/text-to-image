@@ -2,7 +2,7 @@
 Parts of this code are taken from: https://github.com/hanzhanggit/StackGAN/blob/master/misc/preprocess_flowers.py
 """
 import os
-from preprocess.utils import get_image
+from utils import get_image
 import scipy.misc
 import numpy as np
 from sklearn.externals import joblib
@@ -11,7 +11,7 @@ from sklearn.externals import joblib
 # Edit this list to specify which files to be created
 IMG_SIZES = [600]
 LOAD_SIZE = 600
-FLOWER_DIR = './data/flowers'
+FLOWER_DIR = './preprocess/data/flowers'
 
 
 def load_filenames(data_dir):

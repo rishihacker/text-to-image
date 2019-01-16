@@ -2,6 +2,15 @@
 Parts of this code are taken from: https://github.com/hanzhanggit/StackGAN/blob/master/misc/datasets.py
 """
 
+'''
+Rishi's comments:
+Dataset object will be created somewhere;
+its attributes will give info - 
+num_examples is m
+_images is most likely an array of len m containing all images
+h, w are most likely same and = _imsize
+'''
+
 import numpy as np
 from sklearn.externals import joblib
 import pickle

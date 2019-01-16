@@ -5,3 +5,4 @@ logs/
 /checkpoints/
 *.pyc
 *__pycache__*
+/preprocess/data/flowers/jpg
