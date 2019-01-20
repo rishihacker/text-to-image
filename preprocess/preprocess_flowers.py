@@ -11,7 +11,7 @@ from sklearn.externals import joblib
 # Edit this list to specify which files to be created
 IMG_SIZES = [600]
 LOAD_SIZE = 600
-FLOWER_DIR = './preprocess/data/flowers'
+FLOWER_DIR = 'data/flowers'
 
 
 def load_filenames(data_dir):
@@ -44,7 +44,7 @@ def save_data_list(inpath, outpath, filenames):
             if cnt % 100 == 0:
                 print('\rLoad %d......' % cnt, end="", flush=True)
 
-        print('Images processed: %d', len(filenames))
+        print('Images processed: %d' % len(filenames))
 
         outfile = outpath + str(size) + 'images.pickle'
         joblib.dump(images, outfile)

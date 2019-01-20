@@ -270,7 +270,7 @@ class TextDataset(object):
         self._test = test
 
     def get_data(self, pickle_path, aug_flag=True) -> Dataset:
-        images = joblib.load(pickle_path + self.image_filename)
+        images = joblib.load(pickle_path + '600images.pickle')#self.image_filename)
         images = np.array(images)
         print('Image shape: ', images.shape)
 
