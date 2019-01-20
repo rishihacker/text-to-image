@@ -6,10 +6,10 @@ from utils.config import config_from_yaml
 import os
 
 flags = tf.app.flags
-# flags.DEFINE_string('cfg', './models/pggan/cfg/flowers.yml',
-#                     'Relative path to the config of the model [./models/pggan/cfg/flowers.yml]')
-flags.DEFINE_string('cfg', './models/pggan/cfg/birds.yml',
-                    'Relative path to the config of the model [./models/pggan/cfg/birds.yml]')
+flags.DEFINE_string('cfg', './models/pggan/cfg/flowers.yml',
+                    'Relative path to the config of the model [./models/pggan/cfg/flowers.yml]')
+#flags.DEFINE_string('cfg', './models/pggan/cfg/birds.yml',
+#                    'Relative path to the config of the model [./models/pggan/cfg/birds.yml]')
 FLAGS = flags.FLAGS
 
 if __name__ == "__main__":
@@ -55,10 +55,12 @@ if __name__ == "__main__":
         datadir = cfg.DATASET_DIR
         dataset = TextDataset(datadir, cfg.MODEL.SIZES[stage[i] - 1])
 
-        filename_test = '%s/test' % datadir
+        filename_test = '%stest' % datadir
+        filename_test = 'data/flowers/test/'
         dataset.test = dataset.get_data(filename_test)
 
-        filename_train = '%s/train' % datadir
+        filename_train = '%strain' % datadir
+        filename_train = 'data/flowers/train/'
         dataset.train = dataset.get_data(filename_train)
 
         pggan = PGGAN(batch_size=batch_size, steps=max_iters,
